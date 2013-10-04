@@ -1,0 +1,743 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CC065EE-FB16-440A-A9E0-E1A28EF208E1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\bd.mdf" />
+    <Content Include="App_Data\bd_log.ldf">
+      <DependentUpon>bd.mdf</DependentUpon>
+    </Content>
+    <Content Include="Capitoadmin.aspx" />
+    <Content Include="CapitolAddadmin.aspx" />
+    <Content Include="CapitolEditadmin.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="data1\images\openglringbig.jpg" />
+    <Content Include="data1\images\spheres.big.jpg" />
+    <Content Include="data1\images\table_final.jpg" />
+    <Content Include="data1\tooltips\openglringbig.jpg" />
+    <Content Include="data1\tooltips\spheres.big.jpg" />
+    <Content Include="data1\tooltips\table_final.jpg" />
+    <Content Include="Despre.aspx" />
+    <Content Include="engine1\arrows.png" />
+    <Content Include="engine1\bullet.png" />
+    <Content Include="engine1\jquery.js" />
+    <Content Include="engine1\script.js" />
+    <Content Include="engine1\style.css" />
+    <Content Include="engine1\triangle.png" />
+    <Content Include="engine1\wowslider.js" />
+    <Content Include="Galerie.aspx" />
+    <Content Include="galerie\closelabel.gif" />
+    <Content Include="galerie\lgin.jpeg" />
+    <Content Include="galerie\loading.gif" />
+    <Content Include="galerie\poza1.jpg" />
+    <Content Include="galerie\poza2.jpg" />
+    <Content Include="galerie\poza3.jpg" />
+    <Content Include="galerie\poza4.jpg" />
+    <Content Include="galerie\poza5.jpg" />
+    <Content Include="galerie\poza6.jpg" />
+    <Content Include="galerie\x.png" />
+    <Content Include="Homeadmin.aspx" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\cancel.png" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\closelabel.gif" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\next.gif" />
+    <Content Include="images\nextlabel.gif" />
+    <Content Include="images\plus.gif" />
+    <Content Include="images\prev.gif" />
+    <Content Include="images\prevlabel.gif" />
+    <Content Include="images\save.png" />
+    <Content Include="ItemAddadmin.aspx" />
+    <Content Include="Itemadmin.aspx" />
+    <Content Include="ItemEditadmin.aspx" />
+    <Content Include="LectieAddadmin.aspx" />
+    <Content Include="LectieEditadmin.aspx" />
+    <Content Include="LectiiAdmin.aspx" />
+    <Content Include="Profil.aspx" />
+    <Content Include="Scripts\images\blank.gif" />
+    <Content Include="Scripts\images\close.gif" />
+    <Content Include="Scripts\images\closelabel.gif" />
+    <Content Include="Scripts\images\loading.gif" />
+    <Content Include="Scripts\images\next.gif" />
+    <Content Include="Scripts\images\nextlabel.gif" />
+    <Content Include="Scripts\images\prev.gif" />
+    <Content Include="Scripts\images\prevlabel.gif" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.lightbox_me.js" />
+    <Content Include="Scripts\jquery.uploadify.js" />
+    <Content Include="Scripts\JScript1.js" />
+    <Content Include="Scripts\langs\en.js" />
+    <Content Include="Scripts\license.txt" />
+    <Content Include="Scripts\lightbox.js" />
+    <Content Include="Scripts\plugins\advhr\css\advhr.css" />
+    <Content Include="Scripts\plugins\advhr\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\advhr\js\rule.js" />
+    <Content Include="Scripts\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\advhr\rule.htm" />
+    <Content Include="Scripts\plugins\advimage\css\advimage.css" />
+    <Content Include="Scripts\plugins\advimage\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\advimage\image.htm" />
+    <Content Include="Scripts\plugins\advimage\img\sample.gif" />
+    <Content Include="Scripts\plugins\advimage\js\image.js" />
+    <Content Include="Scripts\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\advlink\css\advlink.css" />
+    <Content Include="Scripts\plugins\advlink\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\advlink\js\advlink.js" />
+    <Content Include="Scripts\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\advlink\link.htm" />
+    <Content Include="Scripts\plugins\advlist\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autolink\editor_plugin.js" />
+    <Content Include="Scripts\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Scripts\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autosave\editor_plugin.js" />
+    <Content Include="Scripts\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autosave\langs\en.js" />
+    <Content Include="Scripts\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Scripts\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Scripts\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\directionality\editor_plugin.js" />
+    <Content Include="Scripts\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\emotions\editor_plugin.js" />
+    <Content Include="Scripts\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\emotions\emotions.htm" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Scripts\plugins\emotions\js\emotions.js" />
+    <Content Include="Scripts\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\example\dialog.htm" />
+    <Content Include="Scripts\plugins\example\editor_plugin.js" />
+    <Content Include="Scripts\plugins\example\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\example\img\example.gif" />
+    <Content Include="Scripts\plugins\example\js\dialog.js" />
+    <Content Include="Scripts\plugins\example\langs\en.js" />
+    <Content Include="Scripts\plugins\example\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Scripts\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Scripts\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Scripts\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullpage\fullpage.htm" />
+    <Content Include="Scripts\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Scripts\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Scripts\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Scripts\plugins\iespell\editor_plugin.js" />
+    <Content Include="Scripts\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Scripts\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Scripts\plugins\inlinepopups\template.htm" />
+    <Content Include="Scripts\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Scripts\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\layer\editor_plugin.js" />
+    <Content Include="Scripts\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Scripts\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\lists\editor_plugin.js" />
+    <Content Include="Scripts\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\media\css\media.css" />
+    <Content Include="Scripts\plugins\media\editor_plugin.js" />
+    <Content Include="Scripts\plugins\media\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\media\js\embed.js" />
+    <Content Include="Scripts\plugins\media\js\media.js" />
+    <Content Include="Scripts\plugins\media\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\media\media.htm" />
+    <Content Include="Scripts\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Scripts\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Scripts\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Scripts\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\paste\editor_plugin.js" />
+    <Content Include="Scripts\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\paste\js\pastetext.js" />
+    <Content Include="Scripts\plugins\paste\js\pasteword.js" />
+    <Content Include="Scripts\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\paste\pastetext.htm" />
+    <Content Include="Scripts\plugins\paste\pasteword.htm" />
+    <Content Include="Scripts\plugins\preview\editor_plugin.js" />
+    <Content Include="Scripts\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\preview\example.html" />
+    <Content Include="Scripts\plugins\preview\jscripts\embed.js" />
+    <Content Include="Scripts\plugins\preview\preview.html" />
+    <Content Include="Scripts\plugins\print\editor_plugin.js" />
+    <Content Include="Scripts\plugins\print\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\save\editor_plugin.js" />
+    <Content Include="Scripts\plugins\save\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Scripts\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Scripts\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Scripts\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Scripts\plugins\spellchecker\css\content.css" />
+    <Content Include="Scripts\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Scripts\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Scripts\plugins\style\css\props.css" />
+    <Content Include="Scripts\plugins\style\editor_plugin.js" />
+    <Content Include="Scripts\plugins\style\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\style\js\props.js" />
+    <Content Include="Scripts\plugins\style\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\style\props.htm" />
+    <Content Include="Scripts\plugins\style\readme.txt" />
+    <Content Include="Scripts\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Scripts\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\table\cell.htm" />
+    <Content Include="Scripts\plugins\table\css\cell.css" />
+    <Content Include="Scripts\plugins\table\css\row.css" />
+    <Content Include="Scripts\plugins\table\css\table.css" />
+    <Content Include="Scripts\plugins\table\editor_plugin.js" />
+    <Content Include="Scripts\plugins\table\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\table\js\cell.js" />
+    <Content Include="Scripts\plugins\table\js\merge_cells.js" />
+    <Content Include="Scripts\plugins\table\js\row.js" />
+    <Content Include="Scripts\plugins\table\js\table.js" />
+    <Content Include="Scripts\plugins\table\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\table\merge_cells.htm" />
+    <Content Include="Scripts\plugins\table\row.htm" />
+    <Content Include="Scripts\plugins\table\table.htm" />
+    <Content Include="Scripts\plugins\template\blank.htm" />
+    <Content Include="Scripts\plugins\template\css\template.css" />
+    <Content Include="Scripts\plugins\template\editor_plugin.js" />
+    <Content Include="Scripts\plugins\template\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\template\js\template.js" />
+    <Content Include="Scripts\plugins\template\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\template\template.htm" />
+    <Content Include="Scripts\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="Scripts\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Scripts\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Scripts\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Scripts\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Scripts\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Scripts\themes\advanced\about.htm" />
+    <Content Include="Scripts\themes\advanced\anchor.htm" />
+    <Content Include="Scripts\themes\advanced\charmap.htm" />
+    <Content Include="Scripts\themes\advanced\color_picker.htm" />
+    <Content Include="Scripts\themes\advanced\editor_template.js" />
+    <Content Include="Scripts\themes\advanced\editor_template_src.js" />
+    <Content Include="Scripts\themes\advanced\image.htm" />
+    <Content Include="Scripts\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Scripts\themes\advanced\img\flash.gif" />
+    <Content Include="Scripts\themes\advanced\img\icons.gif" />
+    <Content Include="Scripts\themes\advanced\img\iframe.gif" />
+    <Content Include="Scripts\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Scripts\themes\advanced\img\quicktime.gif" />
+    <Content Include="Scripts\themes\advanced\img\realmedia.gif" />
+    <Content Include="Scripts\themes\advanced\img\shockwave.gif" />
+    <Content Include="Scripts\themes\advanced\img\trans.gif" />
+    <Content Include="Scripts\themes\advanced\img\video.gif" />
+    <Content Include="Scripts\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Scripts\themes\advanced\js\about.js" />
+    <Content Include="Scripts\themes\advanced\js\anchor.js" />
+    <Content Include="Scripts\themes\advanced\js\charmap.js" />
+    <Content Include="Scripts\themes\advanced\js\color_picker.js" />
+    <Content Include="Scripts\themes\advanced\js\image.js" />
+    <Content Include="Scripts\themes\advanced\js\link.js" />
+    <Content Include="Scripts\themes\advanced\js\source_editor.js" />
+    <Content Include="Scripts\themes\advanced\langs\en.js" />
+    <Content Include="Scripts\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Scripts\themes\advanced\link.htm" />
+    <Content Include="Scripts\themes\advanced\shortcuts.htm" />
+    <Content Include="Scripts\themes\advanced\skins\default\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Scripts\themes\advanced\source_editor.htm" />
+    <Content Include="Scripts\themes\simple\editor_template.js" />
+    <Content Include="Scripts\themes\simple\editor_template_src.js" />
+    <Content Include="Scripts\themes\simple\img\icons.gif" />
+    <Content Include="Scripts\themes\simple\langs\en.js" />
+    <Content Include="Scripts\themes\simple\skins\default\content.css" />
+    <Content Include="Scripts\themes\simple\skins\default\ui.css" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Scripts\thickbox.css" />
+    <Content Include="Scripts\thickbox.js" />
+    <Content Include="Scripts\tiny_mce.js" />
+    <Content Include="Scripts\tiny_mce_popup.js" />
+    <Content Include="Scripts\tiny_mce_src.js" />
+    <Content Include="Scripts\uploader.swf" />
+    <Content Include="Scripts\utils\editable_selects.js" />
+    <Content Include="Scripts\utils\form_utils.js" />
+    <Content Include="Scripts\utils\mctabs.js" />
+    <Content Include="Scripts\utils\validate.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Styles\images\blank.gif" />
+    <Content Include="Styles\images\close.gif" />
+    <Content Include="Styles\images\closelabel.gif" />
+    <Content Include="Styles\images\loading.gif" />
+    <Content Include="Styles\images\next.gif" />
+    <Content Include="Styles\images\nextlabel.gif" />
+    <Content Include="Styles\images\prev.gif" />
+    <Content Include="Styles\images\prevlabel.gif" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-1.8.4.custom.css" />
+    <Content Include="Styles\layout\action1.gif" />
+    <Content Include="Styles\layout\action2.gif" />
+    <Content Include="Styles\layout\action3.gif" />
+    <Content Include="Styles\layout\action4.gif" />
+    <Content Include="Styles\layout\add.gif" />
+    <Content Include="Styles\layout\approved.gif" />
+    <Content Include="Styles\layout\aproba.gif" />
+    <Content Include="Styles\layout\asc.gif" />
+    <Content Include="Styles\layout\cancel.png" />
+    <Content Include="Styles\layout\delete.gif" />
+    <Content Include="Styles\layout\desc.gif" />
+    <Content Include="Styles\layout\edit_action.gif" />
+    <Content Include="Styles\layout\footer.png" />
+    <Content Include="Styles\layout\footer_right_li_bar.gif" />
+    <Content Include="Styles\layout\gray_bar.png" />
+    <Content Include="Styles\layout\ico.gif" />
+    <Content Include="Styles\layout\lock.gif" />
+    <Content Include="Styles\layout\login.png" />
+    <Content Include="Styles\layout\loginbox.png" />
+    <Content Include="Styles\layout\logo.png" />
+    <Content Include="Styles\layout\menu_li_bar.gif" />
+    <Content Include="Styles\layout\mm_l.png" />
+    <Content Include="Styles\layout\mm_m.png" />
+    <Content Include="Styles\layout\mm_r.png" />
+    <Content Include="Styles\layout\negative.gif" />
+    <Content Include="Styles\layout\pending.gif" />
+    <Content Include="Styles\layout\plus.gif" />
+    <Content Include="Styles\layout\plus2.gif" />
+    <Content Include="Styles\layout\positive.gif" />
+    <Content Include="Styles\layout\salveaza.png" />
+    <Content Include="Styles\layout\save.png" />
+    <Content Include="Styles\layout\search.png" />
+    <Content Include="Styles\layout\search_button_bg.gif" />
+    <Content Include="Styles\layout\submit_left_blue.gif" />
+    <Content Include="Styles\layout\submit_middle_blue.gif" />
+    <Content Include="Styles\layout\submit_right_blue.gif" />
+    <Content Include="Styles\layout\table_top.gif" />
+    <Content Include="Styles\layout\td_bg1.gif" />
+    <Content Include="Styles\layout\td_bg2.gif" />
+    <Content Include="Styles\lightbox.css" />
+    <Content Include="Styles\poze\logo.jpg" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Test.aspx" />
+    <Content Include="uploads\admin.GIF" />
+    <Content Include="uploads\gray_bar.png" />
+    <Content Include="uploads\ico.gif" />
+    <Content Include="uploads\lectie\Image34.gif" />
+    <Content Include="uploads\lectie\linii.gif" />
+    <Content Include="uploads\lectie\logo.png" />
+    <Content Include="uploads\lectie\puncte.gif" />
+    <Content Include="uploads\test\a\email.png" />
+    <Content Include="uploads\test\b\curs2.png" />
+    <Content Include="uploads\test\b\login.png" />
+    <Content Include="uploads\test\b\loginbox.png" />
+    <Content Include="uploads\test\b\logo1.png" />
+    <Content Include="uploads\test\c\lock.gif" />
+    <Content Include="uploads\test\c\logo.png" />
+    <Content Include="uploads\test\d\table_top.gif" />
+    <Content Include="uploads\test\enunt\curs4.png" />
+    <Content Include="uploads\test\enunt\curs5.png" />
+    <Content Include="uploads\test\enunt\logo3.png" />
+    <Content Include="Usersadmin.aspx" />
+    <Content Include="View.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Capitoadmin.aspx.cs">
+      <DependentUpon>Capitoadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Capitoadmin.aspx.designer.cs">
+      <DependentUpon>Capitoadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapitolAddadmin.aspx.cs">
+      <DependentUpon>CapitolAddadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapitolAddadmin.aspx.designer.cs">
+      <DependentUpon>CapitolAddadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapitolEditadmin.aspx.cs">
+      <DependentUpon>CapitolEditadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapitolEditadmin.aspx.designer.cs">
+      <DependentUpon>CapitolEditadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Despre.aspx.cs">
+      <DependentUpon>Despre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Despre.aspx.designer.cs">
+      <DependentUpon>Despre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Galerie.aspx.cs">
+      <DependentUpon>Galerie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Galerie.aspx.designer.cs">
+      <DependentUpon>Galerie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Homeadmin.aspx.cs">
+      <DependentUpon>Homeadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homeadmin.aspx.designer.cs">
+      <DependentUpon>Homeadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemAddadmin.aspx.cs">
+      <DependentUpon>ItemAddadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemAddadmin.aspx.designer.cs">
+      <DependentUpon>ItemAddadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Itemadmin.aspx.cs">
+      <DependentUpon>Itemadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Itemadmin.aspx.designer.cs">
+      <DependentUpon>Itemadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEditadmin.aspx.cs">
+      <DependentUpon>ItemEditadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemEditadmin.aspx.designer.cs">
+      <DependentUpon>ItemEditadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LectieAddadmin.aspx.cs">
+      <DependentUpon>LectieAddadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LectieAddadmin.aspx.designer.cs">
+      <DependentUpon>LectieAddadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LectieEditadmin.aspx.cs">
+      <DependentUpon>LectieEditadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LectieEditadmin.aspx.designer.cs">
+      <DependentUpon>LectieEditadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LectiiAdmin.aspx.cs">
+      <DependentUpon>LectiiAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LectiiAdmin.aspx.designer.cs">
+      <DependentUpon>LectiiAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profil.aspx.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profil.aspx.designer.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rijndael.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usersadmin.aspx.cs">
+      <DependentUpon>Usersadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usersadmin.aspx.designer.cs">
+      <DependentUpon>Usersadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View.Master.cs">
+      <DependentUpon>View.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View.Master.designer.cs">
+      <DependentUpon>View.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="View.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\plugins\advimage\Upload.ashx" />
+    <Content Include="Scripts\uploader.fla" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uploads\capitol\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1650</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

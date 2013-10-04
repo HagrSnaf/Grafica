@@ -1,0 +1,324 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript" src="Scripts/jquery-1.8.3.js"></script>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <link rel="stylesheet" href="Styles/lightbox.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="Scripts/lightbox.js"></script>
+	
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <style>
+        
+       div.login-popup .textbox .lbox
+
+{ 
+	background:#666666; 
+	border-bottom:1px solid #333;
+	border-left:1px solid #000;
+	border-right:1px solid #333;
+	border-top:1px solid #000;
+	color:#fff; 
+        border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+	font:13px Arial, Helvetica, sans-serif;
+	padding:6px 6px 4px;
+	width:200px;
+}
+        
+    </style>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('a.login-window').click(function () {
+
+                //Getting the variable's value from a link 
+                var loginBox = $(this).attr('href');
+               
+                //Fade in the Popup
+                $(loginBox).fadeIn(300);
+
+                //Set the center alignment padding + border see css style
+                var popMargTop = ($(loginBox).height() + 24) / 2;
+                var popMargLeft = ($(loginBox).width() + 24) / 2;
+
+                $(loginBox).css({
+                    'margin-top': -popMargTop,
+                    'margin-left': -popMargLeft
+                });
+
+                // Add the mask to body
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+
+            // When clicking on the button close or the mask layer the popup closed
+            $('a.close, #mask').live('click', function () {
+                $('#mask , .login-popup').fadeOut(300, function () {
+                    $('#mask').remove();
+                });
+                return false;
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('a.register-window').click(function () {
+
+                //Getting the variable's value from a link 
+                var registerBox = $(this).attr('href');
+
+
+                //Fade in the Popup
+                $(registerBox).fadeIn(300);
+
+
+                //Set the center alignment padding + border see css style
+                var popMargTop = ($(registerBox).height() + 24) / 2;
+                var popMargLeft = ($(registerBox).width() + 24) / 2;
+
+                $(registerBox).css({
+                    'margin-top': -popMargTop,
+                    'margin-left': -popMargLeft
+                });
+
+                // Add the mask to body
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+
+            // When clicking on the button close or the mask layer the popup closed
+            $('a.close, #mask').live('click', function () {
+                $('#mask , #register').fadeOut(300, function () {
+                    $('#mask').remove();
+                });
+                return false;
+            });
+        });
+       
+
+</script>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+
+
+    <form runat="server">
+
+    <div id="login-box" class="login-popup">
+
+      <a href="#" class="close" CausesValidation="False"><img src="galerie/x.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        
+          
+                <fieldset class="textbox">
+            	<span><asp:Label ID="label1" runat="server" class="login_eti" Text="Nume utilizator"></asp:Label>
+                  </span>  
+                <asp:TextBox ID="login_un" runat="server"  class="lbox" ValidationGroup="loggrup"></asp:TextBox>
+                 
+                <span>
+                <asp:Label ID="label2" runat="server" class="login_eti" Text="Parola"></asp:Label>
+                </span>
+                <asp:TextBox ID="login_pass" runat="server" TextMode="password"  class="lbox" ValidationGroup="loggrup"></asp:TextBox>
+                  </br>
+                <button id="Button1" class="submit button" type="button" runat="server" onserverclick="Verifica_date">Log In</button>
+                <p>
+                <a class="forgot" href="#">Am uitat parola !</a>
+                </p>        
+                </fieldset>
+        
+          </div>
+
+
+
+
+
+
+
+    <div id="register" class="register-popup">
+       <a href="#" class="close" CausesValidation="False" ValidationGroup="reggrup"><img src="galerie/x.png" id="inchide" title="Close Window" alt="Close" /></a>
+      <filedset id="register-textbox" class="rtextbox">
+
+          <asp:Label ID="labelnume" runat="server" class="etichete" Text="Nume"></asp:Label>
+          <asp:TextBox ID="nume" runat="server"  class="intrari" ValidationGroup="reggrup"></asp:TextBox>
+   
+                  <asp:RequiredFieldValidator ID="validator1" runat="server" ControlToValidate="nume"  ValidationGroup="reggrup"
+                   Display="Dynamic" ErrorMessage="Completaţi acest câmp"></asp:RequiredFieldValidator>
+
+                  <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"  class="validatori"
+                   ControlToValidate="nume" Display="Dynamic" ErrorMessage="Nume prea lung" ValidationGroup="reggrup" 
+                   ValidationExpression="^[a-zA-Z''-'\s]{1,50}$"></asp:RegularExpressionValidator>
+    <br />
+
+
+         <asp:Label ID="labelprenume" runat="server" Text="Prenume"  class="etichete"></asp:Label>
+          <asp:TextBox ID="prenume" runat="server"  ValidationGroup="reggrup"  class="intrari"></asp:TextBox>
+
+                    <asp:RegularExpressionValidator ID="validator7" runat="server"  class="validatori"
+                      ControlToValidate="prenume" Display="Dynamic" ErrorMessage="Prenume prea lung"  ValidationGroup="reggrup" 
+                       ValidationExpression="^[a-zA-Z''-'\s]{1,50}$"></asp:RegularExpressionValidator>
+ 
+                   <asp:RequiredFieldValidator ID="validator2" runat="server" class="validatori"
+                       ControlToValidate="prenume" Display="Dynamic"  ValidationGroup="reggrup" 
+                       ErrorMessage="Completaţi acest câmp"  ></asp:RequiredFieldValidator>
+</br>
+<asp:Label ID="label3" runat="server" Text="E-mail"  class="etichete"></asp:Label>
+          <asp:TextBox ID="e_mail" runat="server"  ValidationGroup="reggrup"  class="intrari"></asp:TextBox>
+
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"  class="validatori"
+                      ControlToValidate="e_mail" Display="Dynamic" ErrorMessage="E-mail invalid"  ValidationGroup="reggrup" 
+                       ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+ 
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" class="validatori"
+                       ControlToValidate="e_mail" Display="Dynamic"  ValidationGroup="reggrup" 
+                       ErrorMessage="Completaţi acest câmp"  ></asp:RequiredFieldValidator>
+
+
+    <br />
+         <asp:Label ID="labelbday" runat="server" Text="Data nasterii" class="etichete" ValidationGroup="reggrup" ></asp:Label>
+         <asp:DropDownList ID="zi" runat="server" class="ddlist">
+         <asp:ListItem Value="*" Selected="true">Zi</asp:ListItem>
+         </asp:DropDownList>
+         <asp:RequiredFieldValidator id="rfv1" runat="server" ControlToValidate="zi"
+                   InitialValue="*"  ErrorMessage="Completaţi acest câmp" ValidationGroup="reggrup"   Display="Dynamic" />
+         <br />
+         <asp:DropDownList ID="luna" runat="server" class="ddlist" ValidationGroup="reggrup" >
+         <asp:ListItem Value="*" Selected="true">Luna</asp:ListItem>
+         </asp:DropDownList>
+         <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server" ControlToValidate="luna"
+                   InitialValue="*"  ErrorMessage="Completaţi acest câmp" ValidationGroup="reggrup"   Display="Dynamic" />
+
+         <br />
+         <asp:DropDownList ID="an" runat="server" class="ddlist" ValidationGroup="reggrup" >
+         <asp:ListItem Value="*" Selected="true">An</asp:ListItem>
+         </asp:DropDownList>
+         <asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server" ControlToValidate="an"
+                   InitialValue="*"  ErrorMessage="Completaţi acest câmp" ValidationGroup="reggrup"   Display="Dynamic" /> 
+
+        
+       <br />
+
+
+         <asp:Label ID="labelutilizator" runat="server" Text="Nume utilizator" class="etichete"></asp:Label>
+         <asp:TextBox ID="utilizator" runat="server" ValidationGroup="reggrup"  class="intrari"></asp:TextBox>
+         
+                 <asp:RequiredFieldValidator ID="validator3" runat="server" class="validatori" 
+                   ControlToValidate="utilizator" Display="Dynamic"  ValidationGroup="reggrup" 
+                   ErrorMessage="Completaţi acest câmp"></asp:RequiredFieldValidator>
+      
+                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" class="validatori"
+                   ControlToValidate="utilizator" Display="Dynamic" ErrorMessage="Nume de utilizator prea lung"  ValidationGroup="reggrup" 
+                   ValidationExpression="^[a-zA-Z''-'\s]{1,50}$"></asp:RegularExpressionValidator>
+       <br />
+         <asp:Label ID="labelparola" runat="server" Text="Parola"></asp:Label>
+         <asp:TextBox ID="parola" runat="server" TextMode="Password"  ValidationGroup="reggrup" class="intrari"></asp:TextBox>
+         
+                  <asp:RequiredFieldValidator ID="validator4" runat="server" class="validatori"
+                   ControlToValidate="parola" Display="Dynamic" ValidationGroup="reggrup"
+                   ErrorMessage="Completaţi acest câmp"></asp:RequiredFieldValidator>
+    
+                  <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" class="validatori"
+                   ControlToValidate="parola" Display="Dynamic"  ValidationGroup="reggrup" 
+                   ErrorMessage="Parola trebuie să conţina 8-15 caractere" 
+                   ValidationExpression="^[a-zA-Z0-9\s]{8,15}$"></asp:RegularExpressionValidator>
+       <br />
+       <br />
+      <button id="register_button" class="submit button" ValidationGroup="reggrup" type="button" runat="server"  onserverclick="Inregistrare" >Sign Up</button>
+    
+       </filedset>
+ 
+   </div>
+
+
+
+   <div id="page-wrap">
+        <div id="inside" class="clearfix">
+            <div id="main-content">
+              <div class="first">
+    
+   
+        <asp:Panel ID="nelogat" runat="server">
+        <div class="Right"> 
+                <asp:Label ID="msg" runat="server" Text="Numele de utilizator este deja folosit" Visible="false"></asp:Label>
+            </div>
+             <div class="firstRight"> 
+                <a href="#login-box" class="login-window"> Log in </a>&nbsp&nbsp |&nbsp&nbsp <a href="#register" class="register-window"> Register </a>
+             </div>
+        </asp:Panel>
+        <asp:Panel ID="logat" runat="server" Visible="false">
+            <div class="Right"> 
+                <asp:Label ID="bunaziua" runat="server" Text="Buna ziua"></asp:Label>
+            </div>
+             <div class="firstRight"> 
+                <asp:LinkButton ID="aplicatie" runat="server" onclick="aplicatie_Click">Aplicatie</asp:LinkButton>      
+                &nbsp|&nbsp
+                <asp:LinkButton ID="logout" runat="server" onclick="logout_Click">Log out</asp:LinkButton>      
+             </div>
+        </asp:Panel>
+          
+                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                      ConnectionString="<%$ ConnectionStrings:userConnectionString %>" 
+                      SelectCommand="SELECT * FROM [user]"></asp:SqlDataSource>
+</div>
+<div id="header">
+    <div id="mainmenu">
+        <ul>
+            <li><a style="padding-left:50px;" href="/" title="Acasa">Home</a></li>
+            <li><a href="Despre.aspx" title="Despre noi" width="300" >Despre noi</a></li>
+            <li><a href="Galerie.aspx"title="Galerie Foto">Galerie Foto</a></li>
+            <li><a href="Contact.aspx" title="Contact" class="noRight">Contact</a></li>
+        </ul>
+    </div>
+</div>
+<div class="cadruflash">
+        <div id="wowslider-container1">
+	        <div class="ws_images"><ul>
+                <li><img src="data1/images/spheres.big.jpg" alt="spheres.big" title="spheres.big" id="wows1_0"/>Mirror effect</li>
+                <li><img src="data1/images/table_final.jpg" alt="table_final" title="table_final" id="wows1_1"/>umbre si forme</li>
+                <li><img src="data1/images/openglringbig.jpg" alt="opengl-ring-big" title="opengl-ring-big" id="wows1_2"/>textura, luminozitate</li>
+                </ul>
+             </div>
+            <div class="ws_bullets">
+                <div>
+                    <a href="#" title="spheres.big"><img src="data1/tooltips/spheres.big.jpg" alt="spheres.big"/>1</a>
+                    <a href="#" title="table_final"><img src="data1/tooltips/table_final.jpg" alt="table_final"/>2</a>
+                    <a href="#" title="opengl-ring-big"><img src="data1/tooltips/openglringbig.jpg" alt="opengl-ring-big"/>3</a>
+                </div>
+             </div>
+	       <div class="ws_shadow"></div>
+	    </div>
+	<script type="text/javascript" src="engine1/wowslider.js"></script>
+	<script type="text/javascript" src="engine1/script.js"></script>
+
+</div>
+    <div id="content">  
+         <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+     </div>
+</div>
+      
+                 
+                 <asp:Label ID="mesaj" runat="server" ForeColor="Red"></asp:Label>
+      
+                 
+                 </div>
+                 </div>
+    <div id="footer">
+        <p>Copyright &copy;  &middot; Toate drepturile rezervate.</p>
+    </div>
+
+
+    </form>
+</body>
+</html>

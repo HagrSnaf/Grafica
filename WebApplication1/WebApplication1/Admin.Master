@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WebApplication1.Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript" src="Scripts/jquery-1.8.3.js"></script>
+    <link href="~/Styles/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="Styles/lightbox.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="Scripts/lightbox.js"></script>
+    <link href="~/Styles/jquery-ui-1.8.4.custom.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/tiny_mce.js"></script>
+    <script type="text/javascript" >
+    function fileBrowserCallBack(field_name, url, type, win) {
+        browserField = field_name;
+        browserWin = win;
+        window.open('Images.aspx', 'browserWindow', 'modal,width=600,height=700,scrollbars=yes'); //sa nu uit sa fac Images (unde facu upload de poze)
+    }
+    tinyMCE.init({
+        width: '806',
+        height : "480",
+        mode : 'exact',
+        elements: 'elm1,ContentPlaceHolder1_descriere',
+        theme : 'advanced',
+        plugins : 'safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template',
+        theme_advanced_buttons1 : 'save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect',
+        theme_advanced_buttons2 : 'cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor',
+        theme_advanced_buttons3 : 'tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen',
+        theme_advanced_buttons4 : 'insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage',
+        theme_advanced_toolbar_location : 'top',
+        theme_advanced_toolbar_align : 'left',
+        theme_advanced_path_location : 'bottom',
+        theme_advanced_resizing : true,
+        extended_valid_elements: 'a[name|href|target|title|onclick|style],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|style],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]',
+        file_browser_callback: 'fileBrowserCallBack',
+        relative_urls : false,
+        template_external_list_url : 'lists/template_list.js',
+        external_link_list_url : 'lists/link_list.js',
+        template_replace_values : {
+            username : 'Some User',
+            staffid : '991234'
+        }
+    });
+    tinyMCE.init({
+        width: '806',
+        height: "200",
+        mode: 'exact',
+        elements: 'ContentPlaceHolder1_enunt,ContentPlaceHolder1_var_a,ContentPlaceHolder1_var_b,ContentPlaceHolder1_var_c,ContentPlaceHolder1_var_d',
+        theme: 'advanced',
+        plugins: 'safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template',
+        theme_advanced_buttons1: 'save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect',
+        theme_advanced_buttons2: 'cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor',
+        theme_advanced_buttons3: 'tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen',
+        theme_advanced_buttons4: 'insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage',
+        theme_advanced_toolbar_location: 'top',
+        theme_advanced_toolbar_align: 'left',
+        theme_advanced_path_location: 'bottom',
+        theme_advanced_resizing: true,
+        extended_valid_elements: 'a[name|href|target|title|onclick|style],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|style],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]',
+        file_browser_callback: 'fileBrowserCallBack',
+        relative_urls: false,
+        template_external_list_url: 'lists/template_list.js',
+        external_link_list_url: 'lists/link_list.js',
+        template_replace_values: {
+            username: 'Some User',
+            staffid: '991234'
+        }
+    });
+	</script>
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            var url = $(location).attr('href');
+            if (url.indexOf("Home") >= 0) {
+                $("#home").addClass("selected");
+            }
+            if (url.indexOf("User") >= 0) {
+                $("#user").addClass("selected");
+            }
+            if (url.indexOf("Capito") >= 0) {
+                $("#capitole").addClass("selected");
+            }
+            if (url.indexOf("Lecti") >= 0) {
+                $("#lectii").addClass("selected");
+            }
+            if (url.indexOf("Item") >= 0) {
+                $("#itemi").addClass("selected");
+            }
+        })
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper" class="clearfix">
+        <div class="header">
+            <div class="header_left">
+                <a href=""><img src="/styles/poze/logo.jpg" alt="OpenGL" title="OpenGL" width="146" height="59" style="border: none;" /></a>
+            </div>
+            <div class="header_right">
+                <div class="menu">
+                    <ul>
+                        <li><a href="" class="NoPaddingRight" runat="server" onserverclick="delogare">Logout</a></li>
+                        <li class="menu_li_bar">&nbsp;</li>
+                        <li><a href="#">Contul meu</a></li>
+                    </ul>
+                </div>
+                <div class="mesaj_intampinare">
+                    Modul de administrare
+                </div>
+            </div>
+        </div>
+        <div class="green_line"></div>
+        <div id="main_menu">
+            <ul>
+                <li class="NoMarginLeft">
+                    <a href="Homeadmin.aspx" id="home"><span class="l"><span></span></span><span class="m"><em>Home</em><span></span></span><span class="r"><span></span></span></a>
+                </li>
+                <li>
+                    <a href="Usersadmin.aspx" id="user"><span class="l"><span></span></span><span class="m"><em>Utilizatori</em><span></span></span><span class="r"><span></span></span></a>
+                </li>
+                <li>
+                    <a href="Capitoadmin.aspx" id="capitole"><span class="l"><span></span></span><span class="m"><em>Capitole</em><span></span></span><span class="r"><span></span></span></a>
+                </li>
+                <li>
+                    <a href="LectiiAdmin.aspx" id="lectii"><span class="l"><span></span></span><span class="m"><em>Lectii</em><span></span></span><span class="r"><span></span></span></a>
+                </li>
+                <li>
+                    <a href="Itemadmin.aspx" id="itemi"><span class="l"><span></span></span><span class="m"><em>Intrebari</em><span></span></span><span class="r"><span></span></span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sub_menu">
+            <ul>   </ul>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="footer">
+            <div class="footer_left">
+                Copyright &copy; &middot; Toate drepturile rezervate
+            </div>
+            <div class="footer_right">
+                <ul>
+                    <li><a href="#">Contact suport</a></li>
+                    <li class="footer_right_li_bar">&nbsp;</li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    </form>
+</body>
+</html>
