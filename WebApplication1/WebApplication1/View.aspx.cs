@@ -431,7 +431,14 @@ namespace WebApplication1
             int nr = Convert.ToInt16(reader2[0].ToString());
             reader2.Close();
 
-            if (nr == 0)
+            string cmd3 = "Select count ( id ) from item where tip= 'capitol' and  id_continut=" + id + "";
+            SqlCommand continut3 = new SqlCommand(cmd3, conn1);
+            SqlDataReader reader3 = continut3.ExecuteReader();
+            reader3.Read();
+            int nr2 = Convert.ToInt16(reader3[0].ToString());
+            reader3.Close();
+
+            if (nr == 0 && nr2 == 0)
             {
                 string cmd = "Select max(id),count(id) from [test]";
 
@@ -501,8 +508,15 @@ namespace WebApplication1
             reader2.Read();
             int nr = Convert.ToInt16(reader2[0].ToString());
             reader2.Close();
+
+            string cmd3 = "Select count ( id ) from item where tip= 'lectie' and  id_continut=" + id + "";
+            SqlCommand continut3 = new SqlCommand(cmd3, conn1);
+            SqlDataReader reader3 = continut3.ExecuteReader();
+            reader3.Read();
+            int nr2 = Convert.ToInt16(reader3[0].ToString());
+            reader3.Close();
             
-            if (nr == 0)
+            if (nr == 0 && nr2 == 0)
             {
                 string cmd = "Select max(id),count(id) from [test]";
 
@@ -542,6 +556,7 @@ namespace WebApplication1
                 }
                 catch (Exception err)
                 {
+                    throw err;
                     Response.Write("A avut loc o eroare la afisarea lectiei");
 
                 }
@@ -599,7 +614,11 @@ namespace WebApplication1
 
                 //rularea comenzii cmd pe conexiunea conn
                 exista2 = new SqlCommand(cmd2, conn);
-                int idbd = Convert.ToInt32(exista2.ExecuteScalar().ToString());
+                int idbd=0;
+                if (!exista2.ExecuteScalar().Equals(DBNull.Value))
+                {
+                    idbd = Convert.ToInt32(exista2.ExecuteScalar().ToString());
+                }
                 double valoare = fa_media(id_utilizator, id_cap);
 
                 string inscmd = "Insert into [nivel] (id,id_capitol,id_user,valoare)"
@@ -618,6 +637,7 @@ namespace WebApplication1
                 }
                 catch (Exception err)
                 {
+                    throw err;
                     Response.Write("A avut loc o eroare la corectarea testului");
 
                 }
@@ -642,6 +662,7 @@ namespace WebApplication1
                 }
                 catch (Exception err)
                 {
+                    throw err;
                     Response.Write("A avut loc o eroare la corectarea testului");
 
                 }
@@ -678,7 +699,7 @@ namespace WebApplication1
             }
             else
             {
-                Response.Write("A avut loc o eroare la corectarea testului");
+                nr = 1;
             }
             suma = (suma / nr) * 0.3;
             medie = suma;

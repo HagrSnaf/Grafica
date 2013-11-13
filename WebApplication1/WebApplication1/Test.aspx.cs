@@ -253,7 +253,11 @@ namespace WebApplication1
 
                       //rularea comenzii cmd pe conexiunea conn
                       exista2 = new SqlCommand(cmd2, conn);
-                      int idbd = Convert.ToInt32(exista2.ExecuteScalar().ToString());
+                      int idbd = 0;
+                      if (!exista2.ExecuteScalar().Equals(DBNull.Value))
+                      {
+                          idbd = Convert.ToInt32(exista2.ExecuteScalar().ToString());
+                      }
                       double valoare = fa_media(id_utilizator, id_cap);
 
                       string inscmd = "Insert into [nivel] (id,id_capitol,id_user,valoare)"

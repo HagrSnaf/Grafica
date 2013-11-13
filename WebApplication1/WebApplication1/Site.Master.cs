@@ -122,9 +122,7 @@ namespace WebApplication1
 
             //rularea comenzii cmd pe conexiunea conn
             SqlCommand exista = new SqlCommand(cmd, conn);
-            Random r = new Random();
-            int id_util = r.Next();
-             
+             int id_util = Convert.ToInt32(exista.ExecuteScalar().ToString());
 
              cmd = "Select count(id) from [user] where username='"+utilizatorbd+"'";
 
@@ -138,7 +136,7 @@ namespace WebApplication1
                  string inscmd = "Insert into [user] (id,nume,prenume,username,parola,data_nastere,email)"
                     + "values (@id,@nume,@prenume,@username,@parola,@data,@mail)";
                  SqlCommand insertUser = new SqlCommand(inscmd, conn);
-                 insertUser.Parameters.AddWithValue("@id", id_util );
+                 insertUser.Parameters.AddWithValue("@id", id_util + 1);
                  insertUser.Parameters.AddWithValue("@nume", numebd);
                  insertUser.Parameters.AddWithValue("@prenume", prenumebd);
                  insertUser.Parameters.AddWithValue("@username", utilizatorbd);

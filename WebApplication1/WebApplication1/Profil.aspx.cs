@@ -214,7 +214,6 @@ namespace WebApplication1
             recomandari.Controls.Add(new LiteralControl("<br>"));
             for (int i = 0; i < lista_nivele.Count; i++)
             {
-                recomandare += lista_nivele[i].get_id().ToString();
                 if (lista_nivele[i].get_nivel() < 5 && ok==true)
                 {
                     ok = false;
